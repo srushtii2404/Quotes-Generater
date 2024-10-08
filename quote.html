@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quote Generator</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      background-color: #3c2a54;
+    }
+
+    .container {
+      text-align: center;
+      width: 30%;
+      margin-top: 80px;
+      padding: 100px;
+      border: 1px solid black;
+      background-color: white;
+      border-radius: 5px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .quote {
+      margin: 20px 0;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-transform: capitalize;
+      font-weight: bold;
+      font-family:'Courier New', Courier, monospace;
+    }
+
+    #generate-btn {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      background-color: #3c2a54;
+    }
+
+    #generate-btn:hover {
+      background-color: #4e3968;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>QUOTE OF THE DAY</h1>
+    <div class="quote" id="quote"></div>
+    <button id="generate-btn">NEW QUOTE</button>
+  </div>
+
+
+  <script>
+    const quotes = [
+      "The only way to do great work is to love what you do. - Steve Jobs",
+      "Life is what happens when you're busy making other plans. - John Lennon",
+      "In the end, it's not the years in your life that count. It's the life in your years. - Abraham Lincoln",
+      "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
+      "You miss 100% of the shots you don't take. - Wayne Gretzky"
+    ];
+
+    const quoteElement = document.getElementById("quote");
+    const generateBtn = document.getElementById("generate-btn");
+
+    function generateQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      quoteElement.textContent = quotes[randomIndex];
+    }
+
+    generateBtn.addEventListener("click", generateQuote);
+
+     generateQuote();
+
+  </script>
+</body>
+
+</html>
